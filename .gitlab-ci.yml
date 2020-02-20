@@ -1,0 +1,6 @@
+change ip aws:
+  stage: build
+  script:
+    - ./updateMyIP.sh
+  tags:
+    - aws
