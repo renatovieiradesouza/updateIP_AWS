@@ -26,4 +26,8 @@ command=`echo $full_command|sed 's/eval //g'`
 eval "${command}"
 
 #Remove cache
-rm -fv $FileData
+git rm -fv $FileData
+git commit -m "Removendo arquivo $FileData"
+git push origin master
+
+
