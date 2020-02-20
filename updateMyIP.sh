@@ -28,6 +28,6 @@ eval "${command}"
 #Remove cache
 git rm -f $FileData
 git commit -m "Removendo arquivo $FileData"
-git push origin master
+git push origin master --force
 
 
