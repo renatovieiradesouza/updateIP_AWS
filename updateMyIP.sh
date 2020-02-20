@@ -29,7 +29,7 @@ eval "${command}"
 git rm -f $FileData
 git add --all
 git commit -m "Removendo arquivo $FileData"
-git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git origin master
+git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git
 #git push -u origin master
 
 
