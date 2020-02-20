@@ -27,9 +27,10 @@ eval "${command}"
 
 #Remove cache
 git rm -f $FileData
+git add --all
 git commit -m "Removendo arquivo $FileData"
-git push https://renato.souza@dextra-sw.com:Amor3t3rn0@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git origin master
-
-#git push origin master --force
+git remote add origin http://gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git
+#git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git origin master
+git push -u origin master
 
 
