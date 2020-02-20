@@ -27,6 +27,7 @@ eval "${command}"
 
 #Remove cache
 git checkout master
+git pull
 git rm -f $FileData
 git add --all
 git commit -m "Removendo arquivo $FileData"
