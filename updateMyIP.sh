@@ -1,15 +1,27 @@
 #set -x
 
-#remove_cache () {
+#Set Variables
+IFS='\'
+s_group="sg-0cebfa1c3c902e7fe"
+FileData=`ls ./*.dados | tail -n +1`
+MyIP=`cat $FileData | cut -f1 -d\;`
+username=`cat $FileData | cut -f2 -d\;`
+
+if [ "${FileData}" == "" ]; then
+	echo "Nenhum arquivo de dados. Verificar"
+	exit 0
+fi
+
 #Remove cache
-#git checkout master
-#git pull
-#git rm -f $FileData
-#git add --all
-#git commit -m "Removendo arquivo $FileData [ci skip]"
-#git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
-#git push -u origin master
-#}
+remove_cache (){
+git checkout master
+git pull
+git rm -f $FileData
+git add --all
+git commit -m "Removendo arquivo $FileData [ci skip]"
+git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
+git push -u origin master
+}
 
 #Set Variables
 IFS='\'
