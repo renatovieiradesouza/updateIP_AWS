@@ -38,7 +38,7 @@ git checkout master
 git pull
 git rm -f $FileData
 git add --all
-git commit -m "Removendo arquivo $FileData"
+git commit -m "Removendo arquivo $FileData [ci skip]"
 git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
 #git push -u origin master
 }
