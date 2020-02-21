@@ -2,6 +2,7 @@ change ip aws:
   stage: build
   variables:
     GIT_STRATEGY: clone
+    GIT_SUBMODULE_STRATEGY: none
   script:
     - ./updateMyIP.sh
   tags:
