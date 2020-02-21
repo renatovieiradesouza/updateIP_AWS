@@ -1,6 +1,6 @@
 #set -x
 
-remove_cache () {
+#remove_cache () {
 #Remove cache
 #git checkout master
 #git pull
@@ -9,7 +9,7 @@ remove_cache () {
 #git commit -m "Removendo arquivo $FileData [ci skip]"
 #git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
 #git push -u origin master
-}
+#}
 
 #Set Variables
 IFS='\'
