@@ -12,6 +12,7 @@ user_exists=`aws ec2 describe-security-groups --group-id $s_group | grep $userna
 IP_exists=`echo "${user_exists}"|grep $MyIP`
 if [ "${IP_exists}" != "" ]; then
 	echo "IP já liberado. Saindo"
+	remove_cache
 	exit 0
 fi
 
@@ -29,7 +30,9 @@ full_command=`echo "eval $raw_command"`
 command=`echo $full_command|sed 's/eval //g'`
 
 eval "${command}"
+remove_cache
 
+remove_cache () {
 #Remove cache
 git checkout master
 git pull
@@ -38,5 +41,5 @@ git add --all
 git commit -m "Removendo arquivo $FileData"
 git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git
 #git push -u origin master
-
+}
 
