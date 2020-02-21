@@ -1,4 +1,4 @@
-set -x
+#set -x
 #rm -f ./*.dados
 #git add .
 #git commit -m "Corrections $username"

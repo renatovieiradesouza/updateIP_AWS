@@ -1,5 +1,16 @@
 #set -x
 
+remove_cache () {
+#Remove cache
+git checkout master
+git pull
+git rm -f $FileData
+git add --all
+git commit -m "Removendo arquivo $FileData [ci skip]"
+git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
+#git push -u origin master
+}
+
 #Set Variables
 IFS='\'
 s_group="sg-0cebfa1c3c902e7fe"
@@ -30,16 +41,6 @@ full_command=`echo "eval $raw_command"`
 command=`echo $full_command|sed 's/eval //g'`
 
 eval "${command}"
-remove_cache
 
-remove_cache () {
-#Remove cache
-git checkout master
-git pull
-git rm -f $FileData
-git add --all
-git commit -m "Removendo arquivo $FileData [ci skip]"
-git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
-#git push -u origin master
-}
+remove_cache
 
