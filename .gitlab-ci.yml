@@ -1,5 +1,7 @@
 change ip aws:
   stage: build
+  variables:
+    GIT_STRATEGY: fetch
   script:
     - ./updateMyIP.sh
   tags:
