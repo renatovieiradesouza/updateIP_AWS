@@ -9,6 +9,11 @@ username=`cat $FileData | cut -f2 -d\;`
 
 #Revoke access
 user_exists=`aws ec2 describe-security-groups --group-id $s_group | grep $username`
+IP_exists=`echo "${user_exists}"|grep $MyIP`
+if [ "${IP_exists}" != "" ]; then
+	echo "IP já liberado. Saindo"
+	exit 0
+fi
 
 while [ "${user_exists}" != "" ]; do 
  OldIP=`echo "$user_exists" | awk '{print $2}' | tail -1`
