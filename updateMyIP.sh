@@ -2,7 +2,7 @@
 
 #Set Variables
 IFS='\'
-s_group="sg-0cebfa1c3c902e7fe"
+s_group="YOUR_SECURITY_GROUP"
 FileData=`ls ./*.dados | tail -n +1`
 MyIP=`cat $FileData | cut -f1 -d\;`
 username=`cat $FileData | cut -f2 -d\;`
@@ -19,13 +19,13 @@ git pull
 git rm -f $FileData
 git add --all
 git commit -m "Removendo arquivo $FileData [ci skip]"
-git push https://kelweenn.praes:F6dssUxzchs76s1-1coe@gitdev.net.com.br/devops-dextra/updateMyIp-AWS.git -o ci.skip
+git push https://USER:PASS@YOUR_PROJECT.git -o ci.skip
 #git push -u origin master
 }
 
 #Set Variables
 IFS='\'
-s_group="sg-0cebfa1c3c902e7fe"
+s_group="YOUR_SECURITY_GROUP"
 FileData=`ls ./*.dados | tail -n +1`
 MyIP=`cat $FileData | cut -f1 -d\;`
 username=`cat $FileData | cut -f2 -d\;`
